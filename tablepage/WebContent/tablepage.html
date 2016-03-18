@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TablePage</title>
+<!-- vendor -->
+<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="col-md-8 col-md-offset-2">
+				<div class="panel panel-default" id="dataTable" item="tablepage" item-page="#pageurl" >
+				  <div class="panel-heading"><i class="glyphicon glyphicon-list-alt"></i>TablePage</div>
+				  <div class="panel-body">
+				    <p>TablePage是自定义的表格数据分页展示的组件，应用场景来自异步加载表格数据需要手动拼接大量的HTML，使用TablePage以“item-”作为数据驱动，可自动加载分页数据。</p>
+				  </div>
+				  <table class="table table-hover">
+				    	<thead>
+				    		<th>#</th><th>Item1</th><th>Item2</th><th>Item3</th><th>Item4</th><th>Operation</th>
+				    	</thead>
+				    	<tbody item-template="template" style="display: none;">
+				    		<tr>
+				    			<td item-filed="index"></td>
+				    			<td item-filed="item1" item-link=""></td>
+				    			<td item-filed="item2"></td>
+				    			<td item-filed="item2,item3"></td>
+				    			<td item-filed="item3"></td>
+				    			<td item-filed="item4"></td>
+				    			<td item-filed="opera" item-index="item1,item2">
+				    				<a herf="javascript:;" onclick="info(#item1)" class="btn btn-info"><i class="glyphicon glyphicon-edit"></i></a>
+				    				<a herf="javascript:;" onclick="info(#item2)" class="btn btn-warning"><i class="glyphicon glyphicon-trash"></i></a>
+				    			</td>
+				    		</tr>
+				    	</tbody>
+				    	<tbody item-data="data"></tbody>
+				    </table>
+				    <div class="panel-footer" item-page="page">
+						  <ul class="pagination" style="margin: 0px;">
+						    <li>
+						      <a href="#" aria-label="Previous">
+						        <span aria-hidden="true">&laquo;</span>
+						      </a>
+						    </li>
+						    <li><a href="#">1</a></li>
+						    <li><a href="#">2</a></li>
+						    <li><a href="#">3</a></li>
+						    <li><a href="#">4</a></li>
+						    <li><a href="#">5</a></li>
+						    <li>
+						      <a href="#" aria-label="Next">
+						        <span aria-hidden="true">&raquo;</span>
+						      </a>
+						    </li>
+						  </ul>
+				    </div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- vendor -->
+<script type="text/javascript" src="assets/vendor/js/jquery.min.js"></script>
+<script type="text/javascript" src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
